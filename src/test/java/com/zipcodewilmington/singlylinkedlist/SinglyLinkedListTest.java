@@ -140,4 +140,26 @@ public class SinglyLinkedListTest {
         llist.add(1);
         Assert.assertEquals(false, llist.contains(41));
     }
+
+    @Test
+    public void testGet() {
+        SinglyLinkedList<Integer> llist = new SinglyLinkedList<>();
+        llist.add(1);
+        Assert.assertEquals(1, llist.get(0));
+    }
+
+    @Test
+    public void testGet2() {
+        SinglyLinkedList<Integer> llist = new SinglyLinkedList<>();
+        llist.add(1);
+        llist.add(4);
+        llist.add(6);
+        Assert.assertEquals(6, llist.get(2));
+    }
+
+    @Test
+    public void testGet3() {
+        SinglyLinkedList<Integer> llist = new SinglyLinkedList<>();
+        Assert.assertEquals(-1, llist.get(2));
+    }
 }
