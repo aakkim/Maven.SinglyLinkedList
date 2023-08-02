@@ -19,8 +19,6 @@ public class Node<T> { //if we take out public and copy this code as an inner cl
     }
 
     public T getData() { return data; }
-    // ...
-
 
     public Boolean hasNext() {
         return this.next != null;

@@ -42,18 +42,28 @@ public class SinglyLinkedList<T> implements LinkedListIface {
     }
 
     @Override
-    public java.lang.Object get(int index) throws IndexOutOfBoundsException {
+    public Object get(int index) throws IndexOutOfBoundsException {
         return null;
     }
 
     @Override
-    public boolean contains(java.lang.Object data) {
+    public boolean contains(Object data) {
         return false;
     }
 
     @Override
-    public int find(java.lang.Object data) {
-        return 0;
+    public int find(Object data) {
+        if(this.isEmpty()) {return -1;}
+        int found = -1; //if we loop through the list and can't find what we are looking for, return -1
+        Node<T> temp = head;
+        do {
+            found++;
+            if(temp.getData().equals(data)) {
+                return found;
+            }
+            temp = temp.getNext();
+        } while (temp != null);
+        return -1; //when we fall out of the loop we return -1 because we didn't find the element
     }
 
     @Override
