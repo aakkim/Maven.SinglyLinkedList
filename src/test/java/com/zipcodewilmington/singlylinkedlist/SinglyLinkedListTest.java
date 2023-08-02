@@ -62,4 +62,26 @@ public class SinglyLinkedListTest {
         String expected = "head -> [1] -> [1] -> NULL";
         Assert.assertEquals(expected, llist.toString());
     }
+
+    @Test
+    public void testSize1() {
+        SinglyLinkedList<Integer> llist = new SinglyLinkedList<>();
+        Assert.assertEquals(0, llist.size());
+    }
+
+    @Test
+    public void testSize2() {
+        SinglyLinkedList<Integer> llist = new SinglyLinkedList<>();
+        llist.add(1);
+        Assert.assertEquals(1, llist.size());
+    }
+
+    @Test
+    public void testSize3() {
+        SinglyLinkedList<Integer> llist = new SinglyLinkedList<>();
+        llist.add(1);
+        llist.add(1);
+        llist.add(1);
+        Assert.assertEquals(3, llist.size());
+    }
 }

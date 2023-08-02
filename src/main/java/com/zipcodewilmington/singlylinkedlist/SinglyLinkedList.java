@@ -17,7 +17,7 @@ public class SinglyLinkedList<T> implements LinkedListIface {
         return head == null; //return true if head is null. if head is null, list is empty
     }
 
-    @java.lang.Override
+    @Override
     public void add(Object data) { //to add an element, find null and then add element
         Node<T> newNode = new Node(data); //create new node
         if(this.head == null) {
@@ -36,37 +36,48 @@ public class SinglyLinkedList<T> implements LinkedListIface {
 
     }
 
-    @java.lang.Override
+    @Override
     public void remove(int index) throws IndexOutOfBoundsException {
 
     }
 
-    @java.lang.Override
+    @Override
     public java.lang.Object get(int index) throws IndexOutOfBoundsException {
         return null;
     }
 
-    @java.lang.Override
+    @Override
     public boolean contains(java.lang.Object data) {
         return false;
     }
 
-    @java.lang.Override
+    @Override
     public int find(java.lang.Object data) {
         return 0;
     }
 
-    @java.lang.Override
+    @Override
     public int size() {
-        return 0;
+
+        if(this.isEmpty()) {
+            return 0;
+        }
+
+        int n = 0;
+        Node<T> temp = head;
+        do {
+            n++;
+            temp = temp.getNext();
+        } while (temp != null);
+        return n;
     }
 
-    @java.lang.Override
+    @Override
     public SinglyLinkedList copy() {
         return null;
     }
 
-    @java.lang.Override
+    @Override
     public void sort(Comparator comparator) {
 
     }
@@ -82,8 +93,9 @@ public class SinglyLinkedList<T> implements LinkedListIface {
             do { //loop will run once and then check if temp is null or has next
                 //print the data/element
                 sb.append("[" + temp.getData() + "] -> ");
+                //get next element of list
                 temp = temp.getNext();
-            } while(temp != null); // && (temp.hasNext())); //if temp is not null and has a next that's not null
+            } while(temp != null); //if temp is not null
         }
         //add NULL
         sb.append("NULL");
