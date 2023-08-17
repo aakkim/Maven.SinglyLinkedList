@@ -37,7 +37,27 @@ public class SinglyLinkedList<T> implements LinkedListIface {
     }
 
     @Override
-    public void remove(int index) throws IndexOutOfBoundsException {
+    public void remove(int index) throws NullPointerException {
+         try {
+             if(index == 0) {
+                 this.head = head.getNext();
+             }
+             Node<T> node = head;
+             int idx = 0;
+             while(node != null && idx < index-1) {
+                 node = node.getNext();
+                 idx++;
+             }
+
+             if(node.getNext().getNext() == null) {
+                 node.setNext(null);
+             } else {
+                 node.setNext(node.getNext().getNext());
+             }
+
+         } catch (NullPointerException e) {
+             System.out.println("yikes");
+         }
 
     }
 

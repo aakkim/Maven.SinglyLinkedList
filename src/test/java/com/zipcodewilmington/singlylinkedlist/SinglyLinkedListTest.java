@@ -162,4 +162,25 @@ public class SinglyLinkedListTest {
         SinglyLinkedList<Integer> llist = new SinglyLinkedList<>();
         Assert.assertEquals(-1, llist.get(2));
     }
+
+    @Test
+    public void testRemove1() {
+        SinglyLinkedList<Integer> llist = new SinglyLinkedList<>();
+        llist.add(1);
+        llist.remove(0);
+        System.out.println(llist);
+        Assert.assertEquals(true, llist.isEmpty());
+        Assert.assertTrue(llist.isEmpty());
+    }
+
+    @Test
+    public void testRemove2() {
+        SinglyLinkedList<Integer> llist = new SinglyLinkedList<>();
+        llist.add(1);
+        llist.add(3);
+        llist.add(5);
+        llist.remove(2);
+        Assert.assertEquals(2, llist.size());
+        Assert.assertFalse(llist.isEmpty());
+    }
 }
